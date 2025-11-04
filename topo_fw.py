@@ -173,12 +173,9 @@ server=1.1.1.1
 # BLOQUEIO: YouTube e Instagram
 address=/youtube.com/127.0.0.1
 address=/www.youtube.com/127.0.0.1
-address=/m.youtube.com/127.0.0.1
-address=/youtu.be/127.0.0.1
 
 address=/instagram.com/127.0.0.1
 address=/www.instagram.com/127.0.0.1
-address=/cdninstagram.com/127.0.0.1
 
 log-queries
 log-facility=/tmp/dnsmasq-fw.log
@@ -268,7 +265,7 @@ def start_tcpdump(firewall):
     firewall.cmd('tcpdump -i fw-eth0 -w ./fw-eth0.pcap &')
     firewall.cmd('tcpdump -i fw-eth1 -w ./fw-eth1.pcap &')
     
-    info('*** Captura iniciada (arquivos em /tmp/fw-eth*.pcap)\n')
+    info('*** Captura iniciada (arquivos em ./fw-eth*.pcap)\n')
 
 def run_tests(net):
     """Executa testes automatizados sem afetar configurações do host"""
